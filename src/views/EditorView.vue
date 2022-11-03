@@ -1,42 +1,45 @@
 <script setup lang="ts">
-
+import EmailBlock from '@/components/EmailBlock.vue'
+import EmailContent from '@/components/EmailContent.vue'
+import EmailDesign from '@/components/EmailDesign.vue'
 </script>
 
 <template>
-  <n-layout class="">
-    <n-layout-header>header</n-layout-header>
-    <n-layout has-sider>
-      <n-layout-sider>
-        <div class="sider p-6">
-          333
-        </div>
-      </n-layout-sider>
-      <n-layout-content>
-        展示
-      </n-layout-content>
-      <n-layout-sider>
-        编辑
-      </n-layout-sider>
+  <div class="edior-page h-screen relative">
+    <n-layout position="absolute">
+      <n-layout-header bordered class="h-20 p-0">
+        header
+      </n-layout-header>
+      <n-layout has-sider position="absolute" style="top: 80px; bottom: 0px">
+        <n-layout-sider bordered width="302">
+          <EmailBlock />
+        </n-layout-sider>
+        <n-layout-content class="p-10">
+          <EmailContent />
+        </n-layout-content>
+        <n-layout-sider bordered>
+          <EmailDesign />
+        </n-layout-sider>
+      </n-layout>
     </n-layout>
-  </n-layout>
-  <div class="h-4" />
+  </div>
 </template>
 
 <style scoped>
-.n-layout {
-  height: 100vh;
+.edior-page {
+  background-color: rgb(244, 244, 244);
 }
+
 .n-layout-header,
 .n-layout-footer {
-  background: rgba(128, 128, 128, 0.2);
-  padding: 24px;
+  //background: rgba(128, 128, 128, 0.2);
 }
 
 .n-layout-sider {
-  background: rgba(128, 128, 128, 0.3);
+  //background: rgba(128, 128, 128, 0.3);
 }
 
 .n-layout-content {
-  background: rgba(128, 128, 128, 0.4);
+  background-color: rgb(244, 244, 244);
 }
 </style>
