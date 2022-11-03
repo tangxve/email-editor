@@ -3,16 +3,18 @@
 </script>
 
 <template>
-  <n-layout>
+  <n-layout class="">
     <n-layout-header>header</n-layout-header>
     <n-layout has-sider>
-      <n-layout-sider content-style="padding: 24px;">
-        物料
+      <n-layout-sider>
+        <div class="sider p-6">
+          333
+        </div>
       </n-layout-sider>
-      <n-layout-content content-style="padding: 24px;">
+      <n-layout-content>
         展示
       </n-layout-content>
-      <n-layout-sider content-style="padding: 24px;">
+      <n-layout-sider>
         编辑
       </n-layout-sider>
     </n-layout>
@@ -21,6 +23,9 @@
 </template>
 
 <style scoped>
+.n-layout {
+  height: 100vh;
+}
 .n-layout-header,
 .n-layout-footer {
   background: rgba(128, 128, 128, 0.2);
