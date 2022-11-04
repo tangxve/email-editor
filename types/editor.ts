@@ -1,20 +1,17 @@
 export type EmailBlockType = 'text' | 'image' | 'button'
+export type LayoutTagName = 'mj-wrapper' | 'mj-section' | 'mj-column' | 'mj-group'
+export type BlockTagName = 'mj-button' | 'mj-text' | 'mj-image' | 'mj-social' | 'mj-divider'
+export type MjmlTagName = LayoutTagName | BlockTagName
 
-export type MjmlTagName =
-  'mj-wrapper'
-  | 'mj-section'
-  | 'mj-column'
-  | 'mj-group'
-  | 'mj-button'
-  | 'mj-text'
-  | 'mj-image'
-  | 'mj-social'
-  | 'mj-divider'
-
-export interface EmailBlock {
+export interface BaseBlock {
   type: EmailBlockType
-  tagName: MjmlTagName
+  tagName: BlockTagName
   attributes?: any
   content?: string
+}
+
+export interface BaseLayout {
+  colNum: Number
+  tagName: LayoutTagName[]
 }
 

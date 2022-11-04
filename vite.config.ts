@@ -13,7 +13,7 @@ export default defineConfig({
     vue(), vueJsx(),
     AutoImport({
       imports: [
-        'vue',
+        // 'vue',
         {
           'naive-ui': [
             'useDialog',

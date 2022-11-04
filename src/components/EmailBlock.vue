@@ -1,15 +1,25 @@
 <script setup lang="ts">
-import type { EmailBlock } from '../../types/editor'
-import { baseContents } from '@/components/emailConfig'
+import { reactive } from 'vue'
+import type { BaseBlock, BaseLayout } from '../../types/editor'
+import { baseBlocks, baseLayouts } from '@/components/emailConfig'
 
-const blocks = ref<EmailBlock[]>(baseContents)
+const blocks = reactive<BaseBlock[]>(baseBlocks)
+const layouts = reactive<BaseLayout[]>(baseLayouts)
+
+const msg = useMessage()
+
+msg.success('222')
 </script>
 
 <template>
   <div>
     <n-collapse :default-expanded-names="['1', '2', '3']">
       <n-collapse-item title="布局 Layout" name="1">
-        <div>很好</div>
+        <div class="layout-box">
+          <div v-for="(layout, i) in layouts" :key="i" class="layout-item">
+            {{ layout.colNum }}
+          </div>
+        </div>
       </n-collapse-item>
       <n-collapse-item title="内容 Content" name="2">
         <div class="block-box">
