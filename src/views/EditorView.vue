@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import EmailBlock from '@/components/EmailBlock.vue'
+import EmailComponent from '@/components/EmailComponent.vue'
 import EmailContent from '@/components/EmailContent.vue'
 import EmailDesign from '@/components/EmailDesign.vue'
 </script>
@@ -12,7 +12,7 @@ import EmailDesign from '@/components/EmailDesign.vue'
       </n-layout-header>
       <n-layout has-sider position="absolute" style="top: 80px; bottom: 0px">
         <n-layout-sider bordered width="302">
-          <EmailBlock />
+          <EmailComponent />
         </n-layout-sider>
         <n-layout-content class="p-10">
           <EmailContent />

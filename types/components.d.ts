@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    BlockItem: typeof import('./../src/components/BlockItem.vue')['default']
     EmailBlock: typeof import('./../src/components/EmailBlock.vue')['default']
     EmailComponent: typeof import('./../src/components/EmailComponent.vue')['default']
     EmailContent: typeof import('./../src/components/EmailContent.vue')['default']
@@ -17,6 +18,7 @@ declare module '@vue/runtime-core' {
     IconsIconEcosystem: typeof import('./../src/components/icons/IconEcosystem.vue')['default']
     IconsIconSupport: typeof import('./../src/components/icons/IconSupport.vue')['default']
     IconsIconTooling: typeof import('./../src/components/icons/IconTooling.vue')['default']
+    LayoutItem: typeof import('./../src/components/LayoutItem.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
     NCollapse: typeof import('naive-ui')['NCollapse']
     NCollapseItem: typeof import('naive-ui')['NCollapseItem']
