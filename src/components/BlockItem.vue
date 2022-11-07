@@ -5,13 +5,13 @@ interface Props {
   block: BaseBlock
 }
 
-const props = defineProps<Props>()
+const { block } = defineProps<Props>()
 </script>
 
 <template>
   <div class="blockItem">
     <div class="blockItemContainer">
-      <span class="bloc-title">{{ props.block.type }}</span>
+      <span class="bloc-title">{{ block.type }}</span>
     </div>
   </div>
 </template>

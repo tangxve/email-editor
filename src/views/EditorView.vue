@@ -14,10 +14,10 @@ import EmailDesign from '@/components/EmailDesign.vue'
         <n-layout-sider bordered width="302">
           <EmailComponent />
         </n-layout-sider>
-        <n-layout-content class="p-10">
+        <n-layout-content class="p-5">
           <EmailContent />
         </n-layout-content>
-        <n-layout-sider bordered>
+        <n-layout-sider bordered width="302">
           <EmailDesign />
         </n-layout-sider>
       </n-layout>
@@ -25,7 +25,7 @@ import EmailDesign from '@/components/EmailDesign.vue'
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .edior-page {
   background-color: rgb(244, 244, 244);
 }
@@ -41,5 +41,28 @@ import EmailDesign from '@/components/EmailDesign.vue'
 
 .n-layout-content {
   background-color: rgb(244, 244, 244);
+}
+
+:deep(.n-collapse .n-collapse-item) {
+  margin: 0px;
+
+  .n-collapse-item__header {
+    padding: 0px;
+  }
+
+  .n-collapse-item__header-main {
+    padding: 0px 12px;
+    height: 40px;
+    line-height: 40px;
+    background: rgb(247, 248, 250);
+  }
+
+  .n-collapse-item__content-inner {
+    padding: 16px;
+  }
+}
+
+:deep(.n-collapse-item + .n-collapse-item) {
+  margin-top: 14px;
 }
 </style>

@@ -6,17 +6,17 @@ interface Props {
   layout: BaseLayout
 }
 
-const props = defineProps<Props>()
+const { layout } = defineProps<Props>()
 </script>
 
 <template>
   <div class="layout-item">
     <div class="layout-label">
-      {{ props.layout.colNum }} 列 columns
+      {{ layout.colNum }} 列 columns
     </div>
     <div class="layoutItemContainer">
       <div class="layoutItem-content">
-        <div v-for="col in props.layout.colNum" :key="col" class="col">
+        <div v-for="col in layout.colNum" :key="col" class="col">
           {{ col }}
         </div>
       </div>

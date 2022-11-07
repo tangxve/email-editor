@@ -11,5 +11,6 @@
 <style scoped>
 .EmailContent {
   background: #fff;
+  height: 2000px;
 }
 </style>
