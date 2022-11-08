@@ -139,10 +139,25 @@ const songs = ref([
       </n-form>
     </n-collapse-item>
     <n-collapse-item title="边框配置" :name="4">
-      <div>边框配置</div>
+      <n-form-item label="Border" path="phone">
+        <n-input v-model:value="formValue.phone" placeholder="Border" />
+      </n-form-item>
+      <n-form-item label="Border radius" path="phone">
+        <n-input v-model:value="formValue.phone" placeholder="Border radius" />
+      </n-form-item>
     </n-collapse-item>
-    <n-collapse-item title="文字配置" :name="5">
-      <div>文字配置</div>
+    <n-collapse-item title="配置" :name="5">
+      <n-form>
+        <n-form-item label="Href" path="phone">
+          <n-input v-model:value="formValue.phone" placeholder="Href" />
+        </n-form-item>
+        <n-form-item label="Src" path="phone">
+          <n-input v-model:value="formValue.phone" placeholder="src" />
+        </n-form-item>
+        <n-form-item label="Target" path="phone">
+          <n-input v-model:value="formValue.phone" placeholder="Target" />
+        </n-form-item>
+      </n-form>
     </n-collapse-item>
   </n-collapse>
 </template>

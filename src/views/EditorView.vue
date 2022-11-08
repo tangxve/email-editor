@@ -8,7 +8,14 @@ import EmailDesign from '@/components/EmailDesign.vue'
   <div class="edior-page h-screen relative">
     <n-layout position="absolute">
       <n-layout-header bordered class="h-20 p-0">
-        header
+        <n-space>
+          <n-button>Export MJML</n-button>
+          <n-button>Export HTML</n-button>
+          <n-button>Send test email</n-button>
+          <n-button type="primary">
+            Primary
+          </n-button>
+        </n-space>
       </n-layout-header>
       <n-layout has-sider position="absolute" style="top: 80px; bottom: 0px">
         <n-layout-sider bordered width="302">
