@@ -7,17 +7,24 @@ import EmailDesign from '@/components/EmailDesign.vue'
 <template>
   <div class="edior-page h-screen relative">
     <n-layout position="absolute">
-      <n-layout-header bordered class="h-20 p-0">
-        <n-space>
-          <n-button>Export MJML</n-button>
-          <n-button>Export HTML</n-button>
-          <n-button>Send test email</n-button>
-          <n-button type="primary">
-            Primary
-          </n-button>
+      <n-layout-header bordered class="px-8 py-4">
+        <n-space justify="space-between" align="center">
+          <n-space align="center">
+            <n-h3 class="m-0">
+              Email Editor
+            </n-h3>
+          </n-space>
+          <n-space align="center">
+            <n-button>Export MJML</n-button>
+            <n-button>Export HTML</n-button>
+            <n-button>Send test email</n-button>
+            <n-button type="primary">
+              Primary
+            </n-button>
+          </n-space>
         </n-space>
       </n-layout-header>
-      <n-layout has-sider position="absolute" style="top: 80px; bottom: 0px">
+      <n-layout has-sider position="absolute" style="top: 67px; bottom: 0px">
         <n-layout-sider bordered width="302">
           <EmailComponent />
         </n-layout-sider>
