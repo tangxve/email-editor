@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BlockItem: typeof import('./../src/components/BlockItem.vue')['default']
+    BorderWrapper: typeof import('./../src/components/BorderWrapper.vue')['default']
     EmailBlock: typeof import('./../src/components/EmailBlock.vue')['default']
     EmailComponent: typeof import('./../src/components/EmailComponent.vue')['default']
     EmailContent: typeof import('./../src/components/EmailContent.vue')['default']
@@ -43,6 +44,7 @@ declare module '@vue/runtime-core' {
     NSpace: typeof import('naive-ui')['NSpace']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TestContent: typeof import('./../src/components/testContent.vue')['default']
     TheWelcome: typeof import('./../src/components/TheWelcome.vue')['default']
     WelcomeItem: typeof import('./../src/components/WelcomeItem.vue')['default']
   }
