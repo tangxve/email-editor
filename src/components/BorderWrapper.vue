@@ -1,20 +1,24 @@
 <script setup lang="ts">
 import { useMouseInElement } from '@vueuse/core'
 
-const testFn = () => {
-  console.log(222)
-}
+const borderWrapperRef = ref<any>(null)
 const target = ref(null)
-const mouse = reactive(useMouseInElement(target))
+
+const testFn = () => {
+  borderWrapperRef.value.classList.add('BorderWrapper-isHover')
+}
+
+const leaveFn = () => {
+  borderWrapperRef.value.classList.remove('BorderWrapper-isHover')
+}
 </script>
 
 <template>
-  <div class="">
-    {{ mouse }}
-  </div>
-  <div ref="target" class="BorderWrapper" @mouseover="testFn">
-    <slot />
-    <div class="BorderWrapper-box" />
+  <div ref="target" class="BorderWrapper" @mouseover="testFn" @mouseleave="leaveFn">
+    <div class="slot-box">
+      <slot />
+    </div>
+    <div ref="borderWrapperRef" class="BorderWrapper-box" />
   </div>
 </template>
 
@@ -23,18 +27,27 @@ const mouse = reactive(useMouseInElement(target))
   position: relative;
   display: inline-block;
 
+  .slot-box {
+    z-index: 2;
+    //position: absolute;
+  }
+
   .BorderWrapper-box {
-    z-index: -1;
+    z-index: 1;
     top: 0px;
     left: 0px;
     right: 0px;
     bottom: 0px;
     position: absolute;
-    background: #51d6a9;
+    //background: #51d6a9;
 
     &:hover {
       outline: #51d6a9 solid 1px;
     }
+  }
+
+  .BorderWrapper-isHover {
+    outline: #51d6a9 solid 1px;
   }
 }
 </style>
