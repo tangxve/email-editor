@@ -26,8 +26,10 @@ const leaveFn = () => {
 .BorderWrapper {
   position: relative;
   display: inline-block;
+  width: 100%;
 
   .slot-box {
+    padding: 3px;
     z-index: 2;
     //position: absolute;
   }

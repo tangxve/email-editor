@@ -1,4 +1,4 @@
-import type { BaseBlock, BaseLayout } from '../../types/editor'
+import type { BaseBlock, BaseLayout } from '../../../types/editor'
 
 export const baseBlocks: BaseBlock[] = [
   {

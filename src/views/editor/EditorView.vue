@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import EmailComponent from '@/components/EmailComponent.vue'
-import EmailContent from '@/components/EmailContent.vue'
-import EmailDesign from '@/components/EmailDesign.vue'
+import EmailComponent from '@/views/editor/EmailComponent.vue'
+import EmailContent from '@/views/editor/EmailContent.vue'
+import EmailDesign from '@/views/editor/EmailDesign.vue'
 </script>
 
 <template>

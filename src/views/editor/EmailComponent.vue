@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-import type { BaseBlock, BaseLayout } from '../../types/editor'
+import type { BaseBlock, BaseLayout } from '../../../types/editor'
 import BlockItem from '@/components/BlockItem.vue'
 import LayoutItem from '@/components/LayoutItem.vue'
-import { baseBlocks, baseLayouts } from '@/components/emailConfig'
+import { baseBlocks, baseLayouts } from '@/views/editor/emailConfig'
 
 const blocks = reactive<BaseBlock[]>(baseBlocks)
 const layouts = reactive<BaseLayout[]>(baseLayouts)

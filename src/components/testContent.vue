@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import BorderWrapper from '@/components/BorderWrapper.vue'
+import BorderWrapper from '@/components/Wrapper/BorderWrapper.vue'
 </script>
 
 <template>
