@@ -1,7 +1,25 @@
 <script setup lang="ts">
+import { reactive, ref } from 'vue'
+import type { MjmlNode } from '../../../types/editor'
 import EmailComponent from '@/views/editor/EmailComponent.vue'
 import EmailContent from '@/views/editor/EmailContent.vue'
 import EmailDesign from '@/views/editor/EmailDesign.vue'
+import { userSchemaBase } from '@/views/editor/emailConfig'
+
+const getUserSchema = (colNum: number): MjmlNode[] => {
+  userSchemaBase[0].children = Array.from({ length: colNum }, (v, i) => {
+    return {
+      tagName: 'mj-column',
+      line: 2,
+      attributes: {},
+      children: [],
+    }
+  })
+  return [...userSchemaBase]
+}
+
+const userSchema = ref<MjmlNode[]>(getUserSchema(5))
+console.log('userSchema', userSchema)
 </script>
 
 <template>
@@ -29,7 +47,7 @@ import EmailDesign from '@/views/editor/EmailDesign.vue'
           <EmailComponent />
         </n-layout-sider>
         <n-layout-content class="p-5">
-          <EmailContent />
+          <EmailContent :user-schema="userSchema" />
         </n-layout-content>
         <n-layout-sider bordered width="302">
           <EmailDesign />

@@ -1,4 +1,4 @@
-import type { BaseBlock, BaseLayout } from '../../../types/editor'
+import type { BaseBlock, BaseLayout, MjmlNode } from '../../../types/editor'
 
 export const baseBlocks: BaseBlock[] = [
   {
@@ -47,6 +47,28 @@ export const baseLayouts: BaseLayout[] = [
   {
     colNum: 4,
     tagName: ['mj-section', 'mj-column'],
+  },
+]
+
+export const userSchemaBase: MjmlNode[] = [
+  {
+    tagName: 'mj-section',
+    line: 1,
+    attributes: {},
+    children: [
+      {
+        tagName: 'mj-column',
+        line: 2,
+        attributes: {},
+        children: [],
+      },
+      {
+        tagName: 'mj-column',
+        line: 2,
+        attributes: {},
+        children: [],
+      },
+    ],
   },
 ]
 

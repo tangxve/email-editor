@@ -15,3 +15,11 @@ export interface BaseLayout {
   tagName: LayoutTagName[]
 }
 
+export interface MjmlNode {
+  tagName: MjmlTagName | string
+  attributes: any
+  children?: Array<MjmlNode>
+  line: number // 顺序 优先深度
+  content?: string
+}
+
