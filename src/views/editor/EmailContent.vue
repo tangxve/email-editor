@@ -11,7 +11,7 @@ interface Props {
 
 const { userSchema } = defineProps<Props>()
 
-console.log('userSchema', userSchema)
+// console.log('userSchema', userSchema)
 </script>
 
 <template>
