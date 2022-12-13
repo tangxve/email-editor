@@ -4,22 +4,12 @@ import type { MjmlNode } from '../../../types/editor'
 import EmailComponent from '@/views/editor/EmailComponent.vue'
 import EmailContent from '@/views/editor/EmailContent.vue'
 import EmailDesign from '@/views/editor/EmailDesign.vue'
-import { userSchemaBase } from '@/views/editor/emailConfig'
 
-const getUserSchema = (colNum: number): MjmlNode[] => {
-  userSchemaBase[0].children = Array.from({ length: colNum }, (v, i) => {
-    return {
-      tagName: 'mj-column',
-      line: 2,
-      attributes: {},
-      children: [],
-    }
-  })
-  return [...userSchemaBase]
+const userSchema = reactive<MjmlNode[]>([])
+
+const addLayout = function (mjmlNode: MjmlNode) {
+  userSchema.push(mjmlNode)
 }
-
-const userSchema = ref<MjmlNode[]>(getUserSchema(5))
-console.log('userSchema', userSchema)
 </script>
 
 <template>
@@ -44,7 +34,7 @@ console.log('userSchema', userSchema)
       </n-layout-header>
       <n-layout has-sider position="absolute" style="top: 67px; bottom: 0px">
         <n-layout-sider bordered width="302">
-          <EmailComponent />
+          <EmailComponent @addLayout="addLayout" />
         </n-layout-sider>
         <n-layout-content class="p-5">
           <EmailContent :user-schema="userSchema" />

@@ -19,7 +19,9 @@ const { userSchema } = defineProps<Props>()
     <TestContent />
     <SectionContainer v-for="(sectionNode, sectionI) in userSchema" :key="`sectionNode_${sectionI}`">
       <ColumnContainer v-for="(colNode, colI) in sectionNode.children" :key="`colNode_${colI}`">
-        {{ colNode.tagName }}
+        <div class="">
+          {{ colNode.tagName }}
+        </div>
       </ColumnContainer>
     </SectionContainer>
   </div>

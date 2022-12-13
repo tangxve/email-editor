@@ -11,7 +11,7 @@ export interface BaseBlock {
 }
 
 export interface BaseLayout {
-  colNum: Number
+  colNum: number
   tagName: LayoutTagName[]
 }
 

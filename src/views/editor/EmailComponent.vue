@@ -1,16 +1,39 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
-import type { BaseBlock, BaseLayout } from '../../../types/editor'
+import { defineEmits, defineProps, reactive } from 'vue'
+import type { BaseBlock, BaseLayout, MjmlNode } from '../../../types/editor'
 import BlockItem from '@/components/BlockItem.vue'
 import LayoutItem from '@/components/LayoutItem.vue'
 import { baseBlocks, baseLayouts } from '@/views/editor/emailConfig'
 
+const emit = defineEmits<{
+  (e: 'addLayout', mjmlNode: MjmlNode): void
+}>()
+
 const blocks = reactive<BaseBlock[]>(baseBlocks)
 const layouts = reactive<BaseLayout[]>(baseLayouts)
 
-const msg = useMessage()
+const getColumn = (colNum: number): MjmlNode => {
+  const cols = Array.from({ length: colNum }, (v, i) => {
+    return {
+      tagName: 'mj-column',
+      line: 2,
+      attributes: {},
+      children: [],
+    }
+  })
+  const sectionNode = {
+    tagName: 'mj-section',
+    line: 1,
+    attributes: {},
+    children: cols,
+  }
+  return sectionNode
+}
+const addLayout = function (layout: BaseLayout) {
+  const cols = getColumn(layout.colNum)
 
-msg.success('222')
+  emit('addLayout', cols)
+}
 </script>
 
 <template>
@@ -18,7 +41,7 @@ msg.success('222')
     <n-collapse :default-expanded-names="['1', '2', '3']">
       <n-collapse-item title="布局 Layout" name="1">
         <div class="layout-box">
-          <LayoutItem v-for="(layout, i) in layouts" :key="i" :layout="layout" />
+          <LayoutItem v-for="(layout, i) in layouts" :key="i" :layout="layout" @click="addLayout(layout)" />
         </div>
       </n-collapse-item>
       <n-collapse-item title="内容 Content" name="2">
