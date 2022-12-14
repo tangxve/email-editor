@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^9.5.0",
+    "lodash-es": "^4.17.21",
     "naive-ui": "^2.33.5",
     "pinia": "^2.0.23",
     "vfonts": "^0.0.3",
@@ -22,6 +23,7 @@
     "@antfu/eslint-config": "^0.29.2",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/jsdom": "^20.0.0",
+    "@types/lodash-es": "^4.17.6",
     "@types/node": "^16.11.68",
     "@vitejs/plugin-vue": "^3.1.2",
     "@vitejs/plugin-vue-jsx": "^2.0.1",

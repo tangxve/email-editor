@@ -72,3 +72,17 @@ export const userSchemaBase: MjmlNode[] = [
   },
 ]
 
+// 全局默认配置
+export function getDefaultConfig() {
+  return {
+    layoutType: 'PC',
+    pageAttribute: {},
+    widgetList: [],
+    historyData: {
+      index: -1, // index: 0,
+      maxStep: 20,
+      steps: [],
+    },
+  }
+}
+

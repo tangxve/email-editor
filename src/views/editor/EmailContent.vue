@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
 import type { BaseLayout, MjmlNode } from '../../../types/editor'
-import TestContent from '@/components/testContent.vue'
 import SectionContainer from '@/components/container/SectionContainer.vue'
 import ColumnContainer from '@/components/container/ColumnContainer.vue'
 
@@ -10,16 +9,13 @@ interface Props {
 }
 
 const { userSchema } = defineProps<Props>()
-
-// console.log('userSchema', userSchema)
 </script>
 
 <template>
   <div class="EmailContent">
-    <TestContent />
     <SectionContainer v-for="(sectionNode, sectionI) in userSchema" :key="`sectionNode_${sectionI}`">
       <ColumnContainer v-for="(colNode, colI) in sectionNode.children" :key="`colNode_${colI}`">
-        <div class="">
+        <div class="text-center">
           {{ colNode.tagName }}
         </div>
       </ColumnContainer>

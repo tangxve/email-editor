@@ -4,6 +4,7 @@ specifiers:
   '@antfu/eslint-config': ^0.29.2
   '@rushstack/eslint-patch': ^1.1.4
   '@types/jsdom': ^20.0.0
+  '@types/lodash-es': ^4.17.6
   '@types/node': ^16.11.68
   '@vitejs/plugin-vue': ^3.1.2
   '@vitejs/plugin-vue-jsx': ^2.0.1
@@ -15,6 +16,7 @@ specifiers:
   eslint: ^8.26.0
   eslint-plugin-vue: ^9.3.0
   jsdom: ^20.0.1
+  lodash-es: ^4.17.21
   naive-ui: ^2.33.5
   npm-run-all: ^4.1.5
   pinia: ^2.0.23
@@ -33,6 +35,7 @@ specifiers:
 
 dependencies:
   '@vueuse/core': 9.5.0_vue@3.2.41
+  lodash-es: 4.17.21
   naive-ui: 2.33.5_vue@3.2.41
   pinia: 2.0.23_lrjaoqkmph6q2hmgd3qeuy6rom
   vfonts: 0.0.3
@@ -43,6 +46,7 @@ devDependencies:
   '@antfu/eslint-config': 0.29.2_t7ph7dpvh7g5bfovntuojbuu4i
   '@rushstack/eslint-patch': 1.2.0
   '@types/jsdom': 20.0.0
+  '@types/lodash-es': 4.17.6
   '@types/node': 16.18.3
   '@vitejs/plugin-vue': 3.2.0_vite@3.2.2+vue@3.2.41
   '@vitejs/plugin-vue-jsx': 2.1.0_vite@3.2.2+vue@3.2.41
@@ -639,11 +643,9 @@ packages:
     resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
     dependencies:
       '@types/lodash': 4.14.187
-    dev: false
 
   /@types/lodash/4.14.187:
     resolution: {integrity: sha512-MrO/xLXCaUgZy3y96C/iOsaIqZSeupyTImKClHunL5GrmaiII2VwvWmLBu2hwa0Kp0sV19CsyjtrTc/Fx8rg/A==}
-    dev: false
 
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
