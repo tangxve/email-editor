@@ -44,12 +44,12 @@ const leaveFn = () => {
     //background: #51d6a9;
 
     &:hover {
-      outline: #51d6a9 solid 1px;
+      outline: #51d6a9 solid 2px;
     }
   }
 
   .BorderWrapper-isHover {
-    outline: #51d6a9 solid 1px;
+    outline: #51d6a9 solid 2px;
   }
 }
 </style>

@@ -16,7 +16,7 @@ createDesigner()
 </script>
 
 <template>
-  <div class="edior-page h-screen relative">
+  <div class="editor-page h-screen relative">
     <n-layout position="absolute">
       <n-layout-header bordered class="px-8 py-4">
         <n-space justify="space-between" align="center">
@@ -51,7 +51,7 @@ createDesigner()
 </template>
 
 <style scoped lang="scss">
-.edior-page {
+.editor-page {
   background-color: rgb(244, 244, 244);
 }
 

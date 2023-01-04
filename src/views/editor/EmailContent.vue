@@ -13,12 +13,19 @@ const { userSchema } = defineProps<Props>()
 
 <template>
   <div class="EmailContent">
-    <SectionContainer v-for="(sectionNode, sectionI) in userSchema" :key="`sectionNode_${sectionI}`">
-      <ColumnContainer v-for="(colNode, colI) in sectionNode.children" :key="`colNode_${colI}`">
-        <div class="text-center">
-          {{ colNode.tagName }}
-        </div>
-      </ColumnContainer>
+    <SectionContainer
+      v-for="(sectionNode, sectionI) in userSchema"
+      :key="`sectionNode_${sectionI}`" :widget="sectionNode"
+    >
+      <template #default="{ widget }">
+        {{ widget.id }}
+        {{ widget.key }}
+        <ColumnContainer v-for="(colNode, colI) in sectionNode.children" :key="`colNode_${colI}`">
+          <div class="text-center">
+            {{ colNode.tagName }}
+          </div>
+        </ColumnContainer>
+      </template>
     </SectionContainer>
   </div>
 </template>

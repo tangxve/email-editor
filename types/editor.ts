@@ -21,5 +21,7 @@ export interface MjmlNode {
   children?: Array<MjmlNode>
   line: number // 顺序 优先深度
   content?: string
+  id: string
+  key?: string
 }
 

@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { defineEmits, defineProps, reactive } from 'vue'
+import { defineEmits, reactive } from 'vue'
 import type { BaseBlock, BaseLayout, MjmlNode } from '../../../types/editor'
 import BlockItem from '@/components/BlockItem.vue'
 import LayoutItem from '@/components/LayoutItem.vue'
 import { baseBlocks, baseLayouts } from '@/views/editor/emailConfig'
+import { generateId } from '@/utils/util'
 
 const emit = defineEmits<{
   (e: 'addLayout', mjmlNode: MjmlNode): void
@@ -19,15 +20,16 @@ const getColumn = (colNum: number): MjmlNode => {
       line: 2,
       attributes: {},
       children: [],
+      id: generateId(),
     }
   })
-  const sectionNode = {
+  return {
     tagName: 'mj-section',
     line: 1,
     attributes: {},
+    id: generateId(),
     children: cols,
   }
-  return sectionNode
 }
 const addLayout = function (layout: BaseLayout) {
   const cols = getColumn(layout.colNum)
