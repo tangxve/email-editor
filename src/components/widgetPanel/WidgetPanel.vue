@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { defineEmits, reactive } from 'vue'
-import type { BaseBlock, BaseLayout, MjmlNode } from '@/types/editor'
-import BlockItem from '@/components/widgetPanel/BlockItem.vue'
-import LayoutItem from '@/components/widgetPanel/LayoutItem.vue'
+import { defineEmits, defineProps } from 'vue'
+import type { BaseBlock, BaseLayout, Designer, MjmlNode } from '@/types/editor'
 import { baseBlocks } from '@/views/editor/emailConfig'
 import { generateId } from '@/utils/util'
 import { containers } from '@/components/widgetPanel/widgetConfig'
+import BlockItem from '@/components/widgetPanel/BlockItem.vue'
+import LayoutItem from '@/components/widgetPanel/LayoutItem.vue'
+
+defineProps<{ designer: Designer }>()
 
 const emit = defineEmits<{
   (e: 'addLayout', mjmlNode: MjmlNode): void
@@ -34,11 +36,6 @@ const getColumn = (colNum: number): MjmlNode => {
 }
 const addContainerByDbClick = function (layout: BaseLayout) {
   console.log('layout', layout)
-  const cols = getColumn(layout.colNum)
-
-  console.log('cols', cols)
-
-  emit('addLayout', cols)
 }
 </script>
 

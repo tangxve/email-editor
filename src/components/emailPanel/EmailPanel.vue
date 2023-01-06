@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
-import type { MjmlNode } from '@/types/editor'
+import { defineProps, reactive } from 'vue'
+import type { Designer } from '@/types/editor'
 import SectionContainer from '@/components/widgets/SectionContainer.vue'
 import ColumnContainer from '@/components/widgets/ColumnContainer.vue'
 
-interface Props {
-  userSchema: MjmlNode[]
-}
+defineProps<{
+  designer: Designer
+}>()
 
-const { userSchema } = defineProps<Props>()
+const userSchema = reactive([])
 </script>
 
 <template>

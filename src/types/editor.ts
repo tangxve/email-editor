@@ -28,15 +28,15 @@ export interface MjmlNode {
 export type WidgetType = 'section' | 'column'
 
 export interface Widget {
-  key: string
   id: string
+  key?: string
   type: WidgetType
   tagName: MjmlTagName | string
   attributes?: any
   options?: any
   widgetList?: Array<Widget>
   children?: Array<Widget>
-  tabs?: Array<Widget>
+  columns?: Array<Widget>
 }
 
 export interface Designer {

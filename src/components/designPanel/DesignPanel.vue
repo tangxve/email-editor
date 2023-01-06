@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { defineProps, ref } from 'vue'
+import type { Designer } from '@/types/editor'
+
+defineProps<{
+  designer: Designer
+}>()
 
 interface Form {
   phone: string
