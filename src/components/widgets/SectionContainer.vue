@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import type { MjmlNode } from '../../../types/editor'
+import type { MjmlNode } from '@/types/editor'
 import BorderWrapper from '@/components/wrapper/BorderWrapper.vue'
 import { generateId } from '@/utils/util'
 

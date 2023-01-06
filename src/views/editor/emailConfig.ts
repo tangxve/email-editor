@@ -1,4 +1,4 @@
-import type { BaseBlock, BaseLayout, MjmlNode } from '../../../types/editor'
+import type { BaseBlock, BaseLayout, MjmlNode } from '@/types/editor'
 import { generateId } from '@/utils/util'
 
 export const baseBlocks: BaseBlock[] = [

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import type { MjmlNode } from '../../../types/editor'
+import type { MjmlNode } from '@/types/editor'
 import SectionContainer from '@/components/widgets/SectionContainer.vue'
 import ColumnContainer from '@/components/widgets/ColumnContainer.vue'
 

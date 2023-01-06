@@ -25,13 +25,13 @@ export default defineConfig({
           ],
         },
       ],
-      dts: 'types/auto-imports.d.ts',
+      dts: 'src/types/auto-imports.d.ts',
     }),
     Components({
       resolvers: [NaiveUiResolver()],
       // 组件名称包含目录，防止同名冲突，命名空间
       directoryAsNamespace: true,
-      dts: 'types/components.d.ts',
+      dts: 'src/types/components.d.ts',
     }),
   ],
   resolve: {

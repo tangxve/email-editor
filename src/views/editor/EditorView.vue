@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-import type { MjmlNode } from '../../../types/editor'
+import type { Designer, MjmlNode } from '@/types/editor'
 import WidgetPanel from '@/components/widgetPanel/WidgetPanel.vue'
 import EmailPanel from '@/components/emailPanel/EmailPanel.vue'
 import DesignPanel from '@/components/designPanel/DesignPanel.vue'
@@ -12,7 +12,7 @@ const addLayout = function (mjmlNode: MjmlNode) {
   userSchema.push(mjmlNode)
 }
 
-createDesigner()
+const designer = reactive<Designer>(createDesigner())
 </script>
 
 <template>
@@ -37,13 +37,13 @@ createDesigner()
       </n-layout-header>
       <n-layout has-sider position="absolute" style="top: 67px; bottom: 0">
         <n-layout-sider bordered width="302">
-          <WidgetPanel @add-layout="addLayout" />
+          <WidgetPanel :designer="designer" @add-layout="addLayout" />
         </n-layout-sider>
         <n-layout-content class="p-5">
-          <EmailPanel :user-schema="userSchema" />
+          <EmailPanel :designer="designer" :user-schema="userSchema" />
         </n-layout-content>
         <n-layout-sider bordered width="302">
-          <DesignPanel />
+          <DesignPanel :designer="designer" />
         </n-layout-sider>
       </n-layout>
     </n-layout>

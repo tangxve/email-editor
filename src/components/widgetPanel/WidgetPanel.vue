@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import { defineEmits, reactive } from 'vue'
-import type { BaseBlock, BaseLayout, MjmlNode } from '../../../types/editor'
+import type { BaseBlock, BaseLayout, MjmlNode } from '@/types/editor'
 import BlockItem from '@/components/widgetPanel/BlockItem.vue'
 import LayoutItem from '@/components/widgetPanel/LayoutItem.vue'
-import { baseBlocks, baseLayouts } from '@/views/editor/emailConfig'
+import { baseBlocks } from '@/views/editor/emailConfig'
 import { generateId } from '@/utils/util'
+import { containers } from '@/components/widgetPanel/widgetConfig'
 
 const emit = defineEmits<{
   (e: 'addLayout', mjmlNode: MjmlNode): void
 }>()
 
 const blocks = reactive<BaseBlock[]>(baseBlocks)
-const layouts = reactive<BaseLayout[]>(baseLayouts)
+const layouts = reactive<any[]>(containers)
 
 const getColumn = (colNum: number): MjmlNode => {
   const cols = Array.from({ length: colNum }, (v, i) => {
@@ -31,8 +32,11 @@ const getColumn = (colNum: number): MjmlNode => {
     children: cols,
   }
 }
-const addLayout = function (layout: BaseLayout) {
+const addContainerByDbClick = function (layout: BaseLayout) {
+  console.log('layout', layout)
   const cols = getColumn(layout.colNum)
+
+  console.log('cols', cols)
 
   emit('addLayout', cols)
 }
@@ -43,7 +47,10 @@ const addLayout = function (layout: BaseLayout) {
     <n-collapse :default-expanded-names="['1', '2', '3']">
       <n-collapse-item title="布局 Layout" name="1">
         <div class="layout-box">
-          <LayoutItem v-for="(layout, i) in layouts" :key="i" :layout="layout" @click="addLayout(layout)" />
+          <LayoutItem
+            v-for="(layout, i) in layouts" :key="i"
+            :layout="layout" @dblclick="addContainerByDbClick(layout)"
+          />
         </div>
       </n-collapse-item>
       <n-collapse-item title="内容 Content" name="2">
