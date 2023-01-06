@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import type { BaseLayout, MjmlNode } from '../../../types/editor'
-import SectionContainer from '@/components/container/SectionContainer.vue'
-import ColumnContainer from '@/components/container/ColumnContainer.vue'
+import type { MjmlNode } from '../../../types/editor'
+import SectionContainer from '@/components/widgets/SectionContainer.vue'
+import ColumnContainer from '@/components/widgets/ColumnContainer.vue'
 
 interface Props {
   userSchema: MjmlNode[]

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { BaseBlock } from '../../types/editor'
+import type { BaseBlock } from '../../../types/editor'
 
 interface Props {
   block: BaseBlock

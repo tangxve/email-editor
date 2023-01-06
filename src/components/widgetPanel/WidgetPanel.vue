@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { defineEmits, reactive } from 'vue'
 import type { BaseBlock, BaseLayout, MjmlNode } from '../../../types/editor'
-import BlockItem from '@/components/BlockItem.vue'
-import LayoutItem from '@/components/LayoutItem.vue'
+import BlockItem from '@/components/widgetPanel/BlockItem.vue'
+import LayoutItem from '@/components/widgetPanel/LayoutItem.vue'
 import { baseBlocks, baseLayouts } from '@/views/editor/emailConfig'
 import { generateId } from '@/utils/util'
 

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { reactive } from 'vue'
 import type { MjmlNode } from '../../../types/editor'
-import EmailWidget from '@/views/editor/EmailWidget.vue'
-import EmailContent from '@/views/editor/EmailContent.vue'
-import EmailDesign from '@/views/editor/EmailDesign.vue'
+import WidgetPanel from '@/components/widgetPanel/WidgetPanel.vue'
+import EmailPanel from '@/components/emailPanel/EmailPanel.vue'
+import DesignPanel from '@/components/designPanel/DesignPanel.vue'
 import { createDesigner } from '@/views/editor/designer'
 
 const userSchema = reactive<MjmlNode[]>([])
@@ -35,15 +35,15 @@ createDesigner()
           </n-space>
         </n-space>
       </n-layout-header>
-      <n-layout has-sider position="absolute" style="top: 67px; bottom: 0px">
+      <n-layout has-sider position="absolute" style="top: 67px; bottom: 0">
         <n-layout-sider bordered width="302">
-          <EmailWidget @addLayout="addLayout" />
+          <WidgetPanel @add-layout="addLayout" />
         </n-layout-sider>
         <n-layout-content class="p-5">
-          <EmailContent :user-schema="userSchema" />
+          <EmailPanel :user-schema="userSchema" />
         </n-layout-content>
         <n-layout-sider bordered width="302">
-          <EmailDesign />
+          <DesignPanel />
         </n-layout-sider>
       </n-layout>
     </n-layout>
@@ -60,23 +60,19 @@ createDesigner()
   //background: rgba(128, 128, 128, 0.2);
 }
 
-.n-layout-sider {
-  //background: rgba(128, 128, 128, 0.3);
-}
-
 .n-layout-content {
   background-color: rgb(244, 244, 244);
 }
 
 :deep(.n-collapse .n-collapse-item) {
-  margin: 0px;
+  margin: 0;
 
   .n-collapse-item__header {
-    padding: 0px;
+    padding: 0;
   }
 
   .n-collapse-item__header-main {
-    padding: 0px 12px;
+    padding: 0 12px;
     height: 40px;
     line-height: 40px;
     background: rgb(247, 248, 250);

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // import { defineProps } from 'vue'
-import type { BaseLayout } from '../../types/editor'
+import type { BaseLayout } from '../../../types/editor'
 
 interface Props {
   layout: BaseLayout

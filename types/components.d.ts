@@ -7,15 +7,19 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    BlockItem: typeof import('./../src/components/BlockItem.vue')['default']
-    ContainerColumnContainer: typeof import('./../src/components/container/ColumnContainer.vue')['default']
-    ContainerSectionContainer: typeof import('./../src/components/container/SectionContainer.vue')['default']
+    BlockItem: typeof import('@/components/widgetPanel/BlockItem.vue')['default']
+    ContainerColumnContainer: typeof import('@/components/widgets/ColumnContainer.vue')['default']
+    ContainerSectionContainer: typeof import('@/components/widgets/SectionContainer.vue')['default']
+    DesignPanelDesignPanel: typeof import('./../src/components/designPanel/DesignPanel.vue')['default']
+    DesignPanelEmailDesign: typeof import('./../src/components/designPanel/EmailDesign.vue')['default']
+    EmailPanelEmailContent: typeof import('./../src/components/emailPanel/EmailContent.vue')['default']
+    EmailPanelEmailPanel: typeof import('./../src/components/emailPanel/EmailPanel.vue')['default']
     IconsIconCommunity: typeof import('./../src/components/icons/IconCommunity.vue')['default']
     IconsIconDocumentation: typeof import('./../src/components/icons/IconDocumentation.vue')['default']
     IconsIconEcosystem: typeof import('./../src/components/icons/IconEcosystem.vue')['default']
     IconsIconSupport: typeof import('./../src/components/icons/IconSupport.vue')['default']
     IconsIconTooling: typeof import('./../src/components/icons/IconTooling.vue')['default']
-    LayoutItem: typeof import('./../src/components/LayoutItem.vue')['default']
+    LayoutItem: typeof import('@/components/widgetPanel/LayoutItem.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
     NCollapse: typeof import('naive-ui')['NCollapse']
     NCollapseItem: typeof import('naive-ui')['NCollapseItem']
@@ -36,6 +40,12 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TestContent: typeof import('./../src/components/testContent.vue')['default']
+    WidgetPanelBlockItem: typeof import('./../src/components/widgetPanel/BlockItem.vue')['default']
+    WidgetPanelEmailWidget: typeof import('./../src/components/widgetPanel/EmailWidget.vue')['default']
+    WidgetPanelLayoutItem: typeof import('./../src/components/widgetPanel/LayoutItem.vue')['default']
+    WidgetPanelWidgetPanel: typeof import('./../src/components/widgetPanel/WidgetPanel.vue')['default']
+    WidgetsColumnContainer: typeof import('./../src/components/widgets/ColumnContainer.vue')['default']
+    WidgetsSectionContainer: typeof import('./../src/components/widgets/SectionContainer.vue')['default']
     WrapperBorderWrapper: typeof import('./../src/components/wrapper/BorderWrapper.vue')['default']
   }
 }
