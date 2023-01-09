@@ -15,7 +15,6 @@ export function createDesigner(): Designer {
       this.widgetList = []
     },
     addContainerByDbClick(container) {
-      console.log('container', container)
       this.widgetList.push(container)
     },
   }

@@ -1,22 +1,18 @@
 <script setup lang="ts">
-// import { defineProps } from 'vue'
-import type { BaseLayout } from '@/types/editor'
+import { defineProps } from 'vue'
+import type { Widget } from '@/types/editor'
 
-interface Props {
-  layout: BaseLayout
-}
-
-const { layout } = defineProps<Props>()
+defineProps<{ layout: Widget }>()
 </script>
 
 <template>
   <div class="layout-item">
     <div class="layout-label">
-      {{ layout.colNum }} 列 columns
+      {{ layout.columns.length }} 列 columns
     </div>
     <div class="layoutItemContainer">
       <div class="layoutItem-content">
-        <div v-for="col in layout.colNum" :key="col" class="col">
+        <div v-for="col in layout.columns.length" :key="col" class="col">
           {{ col }}
         </div>
       </div>
@@ -25,13 +21,17 @@ const { layout } = defineProps<Props>()
 </template>
 
 <style scoped lang="scss">
+.layout-item {
+  user-select: none;
+}
+
 .layout-item + .layout-item {
   margin-top: 18px;
   cursor: pointer;
 }
 
 .layout-label {
-padding-top: 4px;
+  padding-top: 4px;
 }
 
 .layoutItemContainer {

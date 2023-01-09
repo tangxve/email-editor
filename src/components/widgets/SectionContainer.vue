@@ -1,17 +1,9 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import type { MjmlNode } from '@/types/editor'
+import type { Widget } from '@/types/editor'
 import BorderWrapper from '@/components/wrapper/BorderWrapper.vue'
-import { generateId } from '@/utils/util'
 
-interface Props {
-  widget: MjmlNode
-}
-
-const { widget } = defineProps<Props>()
-
-// eslint-disable-next-line vue/no-mutating-props
-widget.key = `${widget.tagName}_${generateId()}`
+const { widget } = defineProps<{ widget: Widget }>()
 </script>
 
 <template>

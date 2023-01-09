@@ -1,41 +1,18 @@
 <script setup lang="ts">
-import { defineEmits, defineProps } from 'vue'
-import type { BaseBlock, BaseLayout, Designer, MjmlNode } from '@/types/editor'
+import { defineProps } from 'vue'
+import type { BaseBlock, Designer, Widget } from '@/types/editor'
 import { baseBlocks } from '@/views/editor/emailConfig'
-import { generateId } from '@/utils/util'
 import { containers } from '@/components/widgetPanel/widgetConfig'
 import BlockItem from '@/components/widgetPanel/BlockItem.vue'
 import LayoutItem from '@/components/widgetPanel/LayoutItem.vue'
 
-defineProps<{ designer: Designer }>()
-
-const emit = defineEmits<{
-  (e: 'addLayout', mjmlNode: MjmlNode): void
-}>()
+const { designer } = defineProps<{ designer: Designer }>()
 
 const blocks = reactive<BaseBlock[]>(baseBlocks)
-const layouts = reactive<any[]>(containers)
+const layouts = reactive<Widget[]>(containers)
 
-const getColumn = (colNum: number): MjmlNode => {
-  const cols = Array.from({ length: colNum }, (v, i) => {
-    return {
-      tagName: 'mj-column',
-      line: 2,
-      attributes: {},
-      children: [],
-      id: generateId(),
-    }
-  })
-  return {
-    tagName: 'mj-section',
-    line: 1,
-    attributes: {},
-    id: generateId(),
-    children: cols,
-  }
-}
-const addContainerByDbClick = function (layout: BaseLayout) {
-  console.log('layout', layout)
+const addContainerByDbClick = function (layout: Widget) {
+  designer.addContainerByDbClick(layout)
 }
 </script>
 
@@ -46,7 +23,8 @@ const addContainerByDbClick = function (layout: BaseLayout) {
         <div class="layout-box">
           <LayoutItem
             v-for="(layout, i) in layouts" :key="i"
-            :layout="layout" @dblclick="addContainerByDbClick(layout)"
+            :layout="layout"
+            @dblclick="addContainerByDbClick(layout)"
           />
         </div>
       </n-collapse-item>
