@@ -1,28 +1,22 @@
 <script setup lang="ts">
 import { computed, defineProps } from 'vue'
 import type { Designer, Widget } from '@/types/editor'
-import SectionContainer from '@/components/widgets/SectionContainer.vue'
-import ColumnContainer from '@/components/widgets/ColumnContainer.vue'
+import Container from '@/components/widgets/Container.vue'
 
 const { designer } = defineProps<{ designer: Designer }>()
 
 const widgetList = computed<Widget[]>(() => {
   return designer.widgetList || []
 })
+console.log('widgetList', widgetList.value)
 </script>
 
 <template>
   <div class="EmailContent">
-    <SectionContainer
-      v-for="widget in widgetList"
-      :key="widget.key" :widget="widget"
-    >
-      <ColumnContainer v-for="(colNode, colI) in widget.children" :key="`colNode_${colI}`">
-        <div class="text-center">
-          {{ colNode.tagName }}
-        </div>
-      </ColumnContainer>
-    </SectionContainer>
+    <Container
+      v-for="widget in widgetList" :key="widget.key"
+      :widget="widget" :designer="designer"
+    />
   </div>
 </template>
 

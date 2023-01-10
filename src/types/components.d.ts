@@ -37,6 +37,7 @@ declare module '@vue/runtime-core' {
     WidgetPanelLayoutItem: typeof import('./../components/widgetPanel/LayoutItem.vue')['default']
     WidgetPanelWidgetPanel: typeof import('./../components/widgetPanel/WidgetPanel.vue')['default']
     WidgetsColumnContainer: typeof import('./../components/widgets/ColumnContainer.vue')['default']
+    WidgetsContainer: typeof import('./../components/widgets/Container.vue')['default']
     WidgetsSectionContainer: typeof import('./../components/widgets/SectionContainer.vue')['default']
     WrapperBorderWrapper: typeof import('./../components/wrapper/BorderWrapper.vue')['default']
   }

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useMouseInElement } from '@vueuse/core'
-
 const borderWrapperRef = ref<any>(null)
 const target = ref(null)
 

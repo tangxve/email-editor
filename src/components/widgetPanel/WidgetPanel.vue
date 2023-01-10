@@ -5,6 +5,7 @@ import { baseBlocks } from '@/views/editor/emailConfig'
 import { containers } from '@/components/widgetPanel/widgetConfig'
 import BlockItem from '@/components/widgetPanel/BlockItem.vue'
 import LayoutItem from '@/components/widgetPanel/LayoutItem.vue'
+import { generateId } from '@/utils/util'
 
 const { designer } = defineProps<{ designer: Designer }>()
 
@@ -12,6 +13,8 @@ const blocks = reactive<BaseBlock[]>(baseBlocks)
 const layouts = reactive<Widget[]>(containers)
 
 const addContainerByDbClick = function (layout: Widget) {
+  layout.key = `${layout.type}_${generateId()}`
+  console.log('layout', layout)
   designer.addContainerByDbClick(layout)
 }
 </script>

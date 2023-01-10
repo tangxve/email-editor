@@ -4,10 +4,14 @@ import type { Widget } from '@/types/editor'
 import BorderWrapper from '@/components/wrapper/BorderWrapper.vue'
 
 const { widget } = defineProps<{ widget: Widget }>()
+
+function selectWidget(widget: Widget) {
+
+}
 </script>
 
 <template>
-  <div class="SectionContainer">
+  <div class="SectionContainer" @click.stop="selectWidget">
     <BorderWrapper>
       <div class="Section-slot">
         <slot :widget="widget" />
