@@ -42,9 +42,15 @@ export interface Widget {
 export interface Designer {
   defaultConfig: any
   selectedId: string | null
-  selectedWidget: string | null
+  selectedWidget: Widget | null
   selectedWidgetName: string | null
   widgetList: Array<Widget>
-  initDesigner (): void
+
+  initDesigner(): void
+
+  setSelected(selected?: Widget): void
+
   addContainerByDbClick(container: Widget): void
+
+  clearSelected(): void
 }

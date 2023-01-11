@@ -1,18 +1,31 @@
 <script setup lang="ts">
-import BorderWrapper from '@/components/wrapper/BorderWrapper.vue'
+import { defineProps } from 'vue'
+import ContainerWrapper from '@/components/wrapper/ContainerWrapper.vue'
+import type { Designer, Widget } from '@/types/editor'
+
+const { widget, designer } = defineProps<{
+  widget: Widget
+  designer: Designer
+}>()
 </script>
 
 <template>
   <div class="ColumnContainer">
-    <BorderWrapper>
-      <slot />
-    </BorderWrapper>
+    <ContainerWrapper :widget="widget" :designer="designer">
+      <div class="column-content">
+        <slot :widget="widget" :designer="designer" />
+      </div>
+    </ContainerWrapper>
   </div>
 </template>>
 
 <style scoped lang="scss">
 .ColumnContainer {
   flex: 1;
-  background: antiquewhite;
+
+  .column-content {
+    background: antiquewhite;
+    padding: 10px;
+  }
 }
 </style>

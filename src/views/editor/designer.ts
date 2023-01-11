@@ -17,5 +17,20 @@ export function createDesigner(): Designer {
     addContainerByDbClick(container) {
       this.widgetList.push(container)
     },
+    setSelected(selected) {
+      if (!selected) {
+        this.clearSelected()
+        return
+      }
+
+      this.selectedId = selected.id
+      this.selectedWidget = selected
+      this.selectedWidgetName = selected.type
+    },
+    clearSelected() {
+      this.selectedId = null
+      this.selectedWidget = null
+      this.selectedWidgetName = null
+    },
   }
 }

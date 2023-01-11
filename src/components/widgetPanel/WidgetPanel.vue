@@ -14,7 +14,6 @@ const layouts = reactive<Widget[]>(containers)
 
 const addContainerByDbClick = function (layout: Widget) {
   layout.key = `${layout.type}_${generateId()}`
-  console.log('layout', layout)
   designer.addContainerByDbClick(layout)
 }
 </script>

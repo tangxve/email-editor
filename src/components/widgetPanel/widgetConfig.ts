@@ -3,13 +3,15 @@ import type { Widget } from '@/types/editor'
 
 const generateCol = (num: number): Widget[] => {
   return Array.from({ length: num }, (): Widget => {
+    const id = generateId()
+    const type = 'column'
     return {
-      type: 'column',
+      type,
+      id,
+      key: `${type}_${id}`,
       tagName: 'mj-column',
       attributes: {},
       children: [],
-      id: generateId(),
-      key: '',
       options: {},
     }
   })

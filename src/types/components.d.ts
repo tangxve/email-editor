@@ -40,5 +40,6 @@ declare module '@vue/runtime-core' {
     WidgetsContainer: typeof import('./../components/widgets/Container.vue')['default']
     WidgetsSectionContainer: typeof import('./../components/widgets/SectionContainer.vue')['default']
     WrapperBorderWrapper: typeof import('./../components/wrapper/BorderWrapper.vue')['default']
+    WrapperContainerWrapper: typeof import('./../components/wrapper/ContainerWrapper.vue')['default']
   }
 }

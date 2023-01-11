@@ -1,22 +1,21 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import type { Widget } from '@/types/editor'
-import BorderWrapper from '@/components/wrapper/BorderWrapper.vue'
+import type { Designer, Widget } from '@/types/editor'
+import ContainerWrapper from '@/components/wrapper/ContainerWrapper.vue'
 
-const { widget } = defineProps<{ widget: Widget }>()
-
-function selectWidget(widget: Widget) {
-
-}
+const { widget } = defineProps<{
+  widget: Widget
+  designer: Designer
+}>()
 </script>
 
 <template>
-  <div class="SectionContainer" @click.stop="selectWidget">
-    <BorderWrapper>
-      <div class="Section-slot">
+  <div class="SectionContainer">
+    <ContainerWrapper :widget="widget" :designer="designer">
+      <div class="section-content">
         <slot :widget="widget" />
       </div>
-    </BorderWrapper>
+    </ContainerWrapper>
   </div>
 </template>
 
@@ -24,9 +23,14 @@ function selectWidget(widget: Widget) {
 .SectionContainer {
   width: 100%;
 
-  .Section-slot {
+  .section-content {
     display: flex;
-    justify-content: space-between;
+    padding: 20px;
+    background-color: #51d6a9;
   }
+}
+
+.SectionContainer + .SectionContainer {
+  margin-top: 10px;
 }
 </style>
