@@ -9,15 +9,10 @@ const { widget, designer } = defineProps<{
 }>()
 
 const selectWidget = () => {
-  console.log('000', widget.type)
-  console.log('111', widget.id)
-
   useSelectWidget(widget, designer)
-  console.log('222', designer.selectedId)
 }
 
 const isSelected = useIsSelect(widget, designer)
-console.log('isSelected', isSelected.value)
 </script>
 
 <template>
@@ -34,10 +29,10 @@ console.log('isSelected', isSelected.value)
   position: relative;
   display: inline-block;
   width: 100%;
+  padding: 1px;
 
-  &.is-selected > .container-content {
+  .is-selected {
     outline: 2px solid #409EFF;
-    //outline-offset: -4px;
   }
 }
 </style>
