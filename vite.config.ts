@@ -39,4 +39,12 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        /* 自动引入全局scss文件 */
+        additionalData: '@import "./src/styles/global.scss";',
+      },
+    },
+  },
 })

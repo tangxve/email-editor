@@ -22,6 +22,7 @@ declare module '@vue/runtime-core' {
     NH3: typeof import('naive-ui')['NH3']
     NH4: typeof import('naive-ui')['NH4']
     NH5: typeof import('naive-ui')['NH5']
+    NIcon: typeof import('naive-ui')['NIcon']
     NInput: typeof import('naive-ui')['NInput']
     NLayout: typeof import('naive-ui')['NLayout']
     NLayoutContent: typeof import('naive-ui')['NLayoutContent']
@@ -37,9 +38,7 @@ declare module '@vue/runtime-core' {
     WidgetPanelLayoutItem: typeof import('./../components/widgetPanel/LayoutItem.vue')['default']
     WidgetPanelWidgetPanel: typeof import('./../components/widgetPanel/WidgetPanel.vue')['default']
     WidgetsColumnContainer: typeof import('./../components/widgets/ColumnContainer.vue')['default']
-    WidgetsContainer: typeof import('./../components/widgets/Container.vue')['default']
     WidgetsSectionContainer: typeof import('./../components/widgets/SectionContainer.vue')['default']
-    WrapperBorderWrapper: typeof import('./../components/wrapper/BorderWrapper.vue')['default']
     WrapperContainerWrapper: typeof import('./../components/wrapper/ContainerWrapper.vue')['default']
   }
 }
