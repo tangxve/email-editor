@@ -29,9 +29,14 @@ const isSelected = useIsSelect(widget, designer)
   position: relative;
   display: inline-block;
   width: 100%;
-  padding: 1px;
+
+  .container-content {
+    position: relative;
+  }
 
   .is-selected {
+    position: relative;
+    z-index: 10;
     outline: 2px solid #409EFF;
   }
 }
