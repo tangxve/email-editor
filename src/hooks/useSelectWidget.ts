@@ -8,5 +8,6 @@ export const useSelectWidget: UseSelectWidget = function (
   widget,
   designer,
 ) {
+  console.log('widget', widget)
   designer.setSelected(widget)
 }

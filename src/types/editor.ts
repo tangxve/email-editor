@@ -48,9 +48,11 @@ export interface Designer {
 
   initDesigner(): void
 
+  addContainerByDbClick(container: Widget): void
+
   setSelected(selected?: Widget): void
 
-  addContainerByDbClick(container: Widget): void
+  removeSelected(widget: Widget, parentWidget?: Widget): void
 
   clearSelected(): void
 }

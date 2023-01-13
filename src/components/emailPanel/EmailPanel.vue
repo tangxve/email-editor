@@ -18,10 +18,10 @@ const widgetList = computed<Widget[]>(() => {
       :widget="widget" :designer="designer"
     >
       <ColumnContainer
-        v-for="col in widget.columns" :key="col.key"
-        :widget="col" :designer="designer"
+        v-for="colWidget in widget.columns" :key="colWidget.key"
+        :widget="colWidget" :designer="designer" :parent-widget="widget"
       >
-        {{ col.type }}
+        {{ colWidget.type }}
       </ColumnContainer>
     </SectionContainer>
   </div>

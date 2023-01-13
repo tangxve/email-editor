@@ -23,9 +23,19 @@ export function createDesigner(): Designer {
         return
       }
 
+      if (selected.id === this.selectedId)
+        return
+
       this.selectedId = selected.id
       this.selectedWidget = selected
       this.selectedWidgetName = selected.type
+    },
+    removeSelected(widget, parentWidget) {
+      console.log('parentWidget', parentWidget)
+      if (parentWidget) {
+        if (parentWidget.type === 'section')
+          parentWidget.columns = []
+      }
     },
     clearSelected() {
       this.selectedId = null

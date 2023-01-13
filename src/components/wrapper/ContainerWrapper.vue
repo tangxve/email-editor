@@ -4,12 +4,17 @@ import { Delete20Regular } from '@vicons/fluent'
 import type { Designer, Widget } from '@/types/editor'
 import { useIsSelect, useSelectWidget } from '@/hooks'
 
-const { widget, designer } = defineProps<{
+const { widget, designer, parentWidget } = defineProps<{
   widget: Widget
   designer: Designer
+  parentWidget?: Widget
 }>()
 const selectWidget = () => {
   useSelectWidget(widget, designer)
+}
+
+const removeWidget = () => {
+  designer.removeSelected(widget, parentWidget)
 }
 
 const isSelected = useIsSelect(widget, designer)
@@ -24,7 +29,7 @@ const isSelected = useIsSelect(widget, designer)
       <div class="widget-label action-item">
         {{ widget.type }}
       </div>
-      <div class="widget-delete action-item">
+      <div class="widget-remove action-item" @click.stop="removeWidget">
         <n-icon size="20">
           <Delete20Regular />
         </n-icon>
