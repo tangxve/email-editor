@@ -2,22 +2,25 @@
 import { defineProps } from 'vue'
 import { Delete20Regular } from '@vicons/fluent'
 import type { Designer, Widget } from '@/types/editor'
-import { useIsSelect, useSelectWidget } from '@/hooks'
+import { useIsSelected, useRemoveWidget, useSelectedWidget } from '@/hooks'
 
 const { widget, designer, parentWidget } = defineProps<{
   widget: Widget
   designer: Designer
-  parentWidget?: Widget
+  parentWidget: Widget
 }>()
 const selectWidget = () => {
-  useSelectWidget(widget, designer)
+  useSelectedWidget(widget, designer)
 }
+
+const isSelected = useIsSelected(widget, designer)
 
 const removeWidget = () => {
-  designer.removeSelected(widget, parentWidget)
+  if (widget.type === 'section')
+    useRemoveWidget(widget, designer, designer)
+  else
+    useRemoveWidget(widget, parentWidget, designer)
 }
-
-const isSelected = useIsSelect(widget, designer)
 </script>
 
 <template>

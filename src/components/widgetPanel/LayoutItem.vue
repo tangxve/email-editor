@@ -8,11 +8,11 @@ defineProps<{ layout: Widget }>()
 <template>
   <div class="layout-item">
     <div class="layout-label">
-      {{ layout.columns.length }} 列 columns
+      {{ layout.widgetList.length }} 列 columns
     </div>
     <div class="layoutItemContainer">
       <div class="layoutItem-content">
-        <div v-for="col in layout.columns.length" :key="col" class="col">
+        <div v-for="col in layout.widgetList.length" :key="col" class="col">
           {{ col }}
         </div>
       </div>

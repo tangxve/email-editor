@@ -1,2 +1,3 @@
-export * from './useSelectWidget'
-export * from './useIsSelect'
+export * from './useSelectedWidget'
+export * from './useIsSelected'
+export * from './useRemoveWidget'

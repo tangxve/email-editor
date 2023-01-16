@@ -13,6 +13,7 @@ const generateCol = (num: number): Widget[] => {
       attributes: {},
       children: [],
       options: {},
+      widgetList: [],
     }
   })
 }
@@ -26,8 +27,8 @@ const generateSection = (): Widget[] => {
       attributes: {},
       children: [],
       id: generateId(),
-      columns: generateCol(v),
       options: {},
+      widgetList: generateCol(v),
     }
   })
 }

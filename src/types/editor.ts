@@ -34,7 +34,7 @@ export interface Widget {
   tagName: MjmlTagName | string
   attributes?: any
   options?: any
-  widgetList?: Array<Widget>
+  widgetList: Array<Widget>
   children?: Array<Widget>
   columns?: Array<Widget>
 }

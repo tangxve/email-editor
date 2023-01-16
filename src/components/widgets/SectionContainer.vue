@@ -3,15 +3,19 @@ import { defineProps } from 'vue'
 import type { Designer, Widget } from '@/types/editor'
 import ContainerWrapper from '@/components/wrapper/ContainerWrapper.vue'
 
-const { widget } = defineProps<{
+const { widget, designer } = defineProps<{
   widget: Widget
   designer: Designer
+  parentWidget?: Widget
 }>()
 </script>
 
 <template>
   <div class="SectionContainer">
-    <ContainerWrapper :widget="widget" :designer="designer">
+    <ContainerWrapper
+      :widget="widget" :designer="designer"
+      :parent-widget="parentWidget"
+    >
       <div class="section-content">
         <slot :widget="widget" />
       </div>
