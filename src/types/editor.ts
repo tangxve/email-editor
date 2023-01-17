@@ -25,18 +25,26 @@ export interface MjmlNode {
   key?: string
 }
 
-export type WidgetType = 'section' | 'column'
+export type WidgetType = 'section' | 'column' | 'text' | 'image' | 'button'
 
-export interface Widget {
+export interface BaseWidget {
   id: string
   key?: string
   type: WidgetType
   tagName: MjmlTagName | string
   attributes?: any
   options?: any
+}
+
+export interface Widget extends BaseWidget {
   widgetList: Array<Widget>
   children?: Array<Widget>
   columns?: Array<Widget>
+}
+
+export interface BasicWidget extends BaseWidget {
+  internal: boolean
+  content?: string
 }
 
 export interface Designer {
@@ -49,6 +57,7 @@ export interface Designer {
   initDesigner(): void
 
   addContainerByDbClick(container: Widget): void
+  addBasicByDbClick(basic: BasicWidget): void
 
   setSelected(selected?: Widget): void
 

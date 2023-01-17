@@ -1,5 +1,5 @@
 import { generateId } from '@/utils/util'
-import type { Widget } from '@/types/editor'
+import type { BasicWidget, Widget } from '@/types/editor'
 
 const generateCol = (num: number): Widget[] => {
   return Array.from({ length: num }, (): Widget => {
@@ -37,5 +37,34 @@ const generateSection = (): Widget[] => {
 export const containers = generateSection()
 
 // 基础组件
-export const basicWidget = []
-
+export const basicWidget: BasicWidget[] = [
+  // 一段文字
+  {
+    internal: true,
+    type: 'text',
+    tagName: 'mj-text',
+    attributes: {},
+    id: generateId(),
+    options: {},
+    content: '',
+  },
+  // 图片
+  {
+    internal: true,
+    type: 'image',
+    tagName: 'mj-image',
+    attributes: {},
+    id: generateId(),
+    options: {},
+    content: '',
+  },
+  {
+    internal: true,
+    type: 'button',
+    tagName: 'mj-button',
+    attributes: {},
+    id: generateId(),
+    options: {},
+    content: '',
+  },
+]

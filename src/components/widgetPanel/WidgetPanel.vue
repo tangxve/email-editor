@@ -1,19 +1,25 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
 import { cloneDeep } from 'lodash-es'
-import type { BaseBlock, Designer, Widget } from '@/types/editor'
-import { baseBlocks } from '@/views/editor/emailConfig'
-import { containers } from '@/components/widgetPanel/widgetConfig'
-import BlockItem from '@/components/widgetPanel/BlockItem.vue'
-import LayoutItem from '@/components/widgetPanel/LayoutItem.vue'
+import type { BasicWidget, Designer, Widget } from '@/types/editor'
+import { basicWidget, containers } from '@/components/widgetPanel/widgetConfig'
+import Basic from '@/components/widgetPanel/BasicWidget.vue'
+import Container from '@/components/widgetPanel/ContainerWidget.vue'
 
 const { designer } = defineProps<{ designer: Designer }>()
 
-const blocks = reactive<BaseBlock[]>(baseBlocks)
+const basics = reactive<BasicWidget[]>(basicWidget)
 const layouts = reactive<Widget[]>(containers)
 
 const addContainerByDbClick = function (layout: Widget) {
   designer.addContainerByDbClick(cloneDeep(layout))
+}
+
+const addBasicByDbClick = function (basic: BasicWidget) {
+  if (designer.selectedWidget?.type !== 'column') {
+
+  }
+  designer.addBasicByDbClick(cloneDeep(basic))
 }
 </script>
 
@@ -22,7 +28,7 @@ const addContainerByDbClick = function (layout: Widget) {
     <n-collapse :default-expanded-names="['1', '2', '3']">
       <n-collapse-item title="布局 Layout" name="1">
         <div class="layout-box">
-          <LayoutItem
+          <Container
             v-for="(layout, i) in layouts" :key="i"
             :layout="layout"
             @dblclick="addContainerByDbClick(layout)"
@@ -31,7 +37,11 @@ const addContainerByDbClick = function (layout: Widget) {
       </n-collapse-item>
       <n-collapse-item title="内容 Content" name="2">
         <div class="block-box">
-          <BlockItem v-for="(block, i) in blocks" :key="i" :block="block" />
+          <Basic
+            v-for="widget in basics" :key="widget.id"
+            :block="widget"
+            @dblclick="addBasicByDbClick(widget)"
+          />
         </div>
       </n-collapse-item>
       <n-collapse-item title="自定义 Custom" name="3">

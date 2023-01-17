@@ -42,5 +42,8 @@ export function createDesigner(): Designer {
       this.selectedWidget = null
       this.selectedWidgetName = null
     },
+
+    addBasicByDbClick(basic: BasicWidget) {
+    },
   }
 }
