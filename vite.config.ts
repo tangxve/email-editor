@@ -19,7 +19,7 @@ export default defineConfig({
         {
           'naive-ui': [
             'useDialog',
-            'useMessage',
+            // 'useMessage', // 使用 createDiscreteApi 包裹一层
             'useNotification',
             'useLoadingBar',
           ],

@@ -5,6 +5,7 @@ import type { BasicWidget, Designer, Widget } from '@/types/editor'
 import { basicWidget, containers } from '@/components/widgetPanel/widgetConfig'
 import Basic from '@/components/widgetPanel/BasicWidget.vue'
 import Container from '@/components/widgetPanel/ContainerWidget.vue'
+import { useMessage } from '@/hooks'
 
 const { designer } = defineProps<{ designer: Designer }>()
 
@@ -15,11 +16,11 @@ const addContainerByDbClick = function (layout: Widget) {
   designer.addContainerByDbClick(cloneDeep(layout))
 }
 
-const addBasicByDbClick = function (basic: BasicWidget) {
-  if (designer.selectedWidget?.type !== 'column') {
-
-  }
-  designer.addBasicByDbClick(cloneDeep(basic))
+// 按钮点击触发
+const addBasicByDbClick = (basic: BasicWidget) => {
+  const msg = useMessage()
+  console.log('msg', msg) // undefined
+  msg.error('444')
 }
 </script>
 
